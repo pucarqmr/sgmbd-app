@@ -1,0 +1,94 @@
+<style>
+  .Regular {
+    color: green;
+  }
+
+  .Atenção {
+    color: yellow;
+  }
+
+  .Irregular {
+    color: red;
+  }
+</style>
+<div class="container" role="main">
+  <br>
+  <h2>Consultar Matricula</h2>
+  <p>Insira o cpf do aluno para consultar as informações do mesmo.</p>
+  <br>
+  <form [formGroup]=alunoSearchForm (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="col-md-8 mb-3">
+        <label for="inputCpf">CPF</label>
+        <input formControlName="cpf" class="form-control" id="inputCpf"
+               aria-describedby="cpfHelp" placeholder="000.000.000-00">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-info">Buscar</button>
+  </form>
+  <br>
+  <div *ngIf="alunoDetalheOut" class="card" xmlns="http://www.w3.org/1999/html">
+    <div class="card-body">
+      <div class="card-block">
+        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Detalhes Pessoais</h6>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Nome</p>
+            <h6 class="text-muted f-w-400">{{alunoDetalheOut.nome}}</h6>
+          </div>
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Cpf</p>
+            <h6 class="text-muted f-w-400">{{alunoDetalheOut.cpf}}</h6>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Nome da mãe</p>
+            <h6 class="text-muted f-w-400">{{alunoDetalheOut.nomePai}}</h6>
+          </div>
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Nome do pai</p>
+            <h6 class="text-muted f-w-400">{{alunoDetalheOut.nomePai}}</h6>
+          </div>
+        </div>
+        <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Endereço</h6>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Logradouro</p>
+            <h6 class="text-muted f-w-400">{{alunoDetalheOut.endereco.logradouro}}</h6>
+          </div>
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Número</p>
+            <h6 class="text-muted f-w-400">{{alunoDetalheOut.endereco.numero}}</h6>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Bairro</p>
+            <h6 class="text-muted f-w-400">{{alunoDetalheOut.endereco.bairro}}</h6>
+          </div>
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Complemento</p>
+            <h6 class="text-muted f-w-400">{{alunoDetalheOut.endereco.complemento}}</h6>
+          </div>
+        </div>
+        <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Escola</h6>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Nome</p>
+            <h6 class="text-muted f-w-400">{{alunoDetalheOut.escola.nome}}</h6>
+          </div>
+        </div>
+        <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Matrícula</h6>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Situação</p>
+            <h3
+              [ngClass]="alunoDetalheOut.situacao"
+              class="f-w-400">{{alunoDetalheOut.situacao}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

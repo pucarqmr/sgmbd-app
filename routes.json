@@ -1,0 +1,4 @@
+{
+  "/alunos/:cpf": "/alunos?cpf=:cpf&singular=1",
+  "/iptus/:inscricaoimobiliaria": "/iptus?inscricaoimobiliaria=:inscricaoimobiliaria&singular=1"
+}

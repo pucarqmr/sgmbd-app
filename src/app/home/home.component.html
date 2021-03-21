@@ -1,0 +1,39 @@
+<div class="content" role="main">
+    <span>Sejam bem vindos!</span>
+
+  <h2>Nossos serviços</h2>
+  <p>Abaixo se encontram os serviços que integram o novo ecossistema da prefeitura de Bom Destino</p>
+
+  <div class="card-container">
+    <div class="card" style="width: 20rem;">
+      <img
+        src="https://www.weahsn.net/wp-content/uploads/dtlb-people-02.png"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title">Módulo de Serviços ao Cidadão</h5>
+        <p class="card-text">
+          Módulo de acesso aos serviços oferecidos pelo município, tais como matrícula nas escolas, cadastro em processos seletivos,
+          gestão de imóveis e outros serviços destinados aos cidadãos de Bom Destino
+        </p>
+        <a [routerLink]="['/cidadao']" class="btn btn-info">Acessar</a>
+      </div>
+    </div>
+    <div class="card" style="width: 20rem;">
+      <img
+        src="https://image.freepik.com/free-vector/gps-icon-showing-street-white_99087-61.jpg"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title">Módulo de Informações Municipais Georeferenciadas</h5>
+        <p class="card-text">
+          Módulo para exibição, através de mapas e rotas, todas as atividades e serviços disponíveis no município.
+          O mesmo irá se integrar com a API do IBGE para consulta de informações relevantes ao módulo;
+        </p>
+        <a [routerLink]="['/geo']" class="btn btn-info">Acessar</a>
+      </div>
+    </div>
+  </div>
+</div>

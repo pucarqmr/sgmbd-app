@@ -1,0 +1,46 @@
+<div class="content" role="main">
+  <h2>Rede de Ensino de Municipal</h2>
+  <div class="card-container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Realizar Matricula</h5>
+            <p class="card-text">Realize a matrícula do aluno preenchendo o formulário a seguir.</p>
+            <a [routerLink]="['/matricula']" class="btn btn-info">Acessar</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Consultar matrícula</h5>
+            <p class="card-text">Consulte o dados do aluno para saber a situação da mátrícula do mesmo.</p>
+            <a [routerLink]="['/matricula-detalhes']" class="btn btn-info">Acessar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Listar alunos matriculados</h5>
+            <p class="card-text">Acesso a relação de alunos cadastrados no sistema e suas informações detalhadas.</p>
+            <a [routerLink]="['/matricula-listar']" class="btn btn-info">Acessar</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Gerenciar matrículas</h5>
+            <p class="card-text">Acesso restrito somente aos educadores e diretores para gerenciar as matrículas dos alunos.</p>
+            <a [routerLink]="['/manutencao']" class="btn btn-info">Acessar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

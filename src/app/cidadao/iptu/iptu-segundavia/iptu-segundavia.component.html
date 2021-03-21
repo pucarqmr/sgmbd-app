@@ -1,0 +1,103 @@
+<style>
+  .Regular {
+    color: green;
+  }
+
+  .Atenção {
+    color: yellow;
+  }
+
+  .Irregular {
+    color: red;
+  }
+</style>
+<div class="container" role="main">
+  <br>
+  <h2>Segunda via IPTU</h2>
+  <p>Insira o número da inscrição imobiliário do imóvel para consultar a informações do mesmo.</p>
+  <br>
+  <form [formGroup]=iptuSearchForm (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="col-md-8 mb-3">
+        <label for="inputInscricaoImobiliaria">Inscrição imobiliária</label>
+        <input formControlName="inscricaoImobiliaria" class="form-control" id="inputInscricaoImobiliaria"
+               aria-describedby="inputInscricaoImobiliariaHelp" placeholder="000000">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-info">Buscar</button>
+  </form>
+  <br>
+  <div *ngIf="iptuDetalhesOut" class="card" xmlns="http://www.w3.org/1999/html">
+    <div class="card-body">
+      <div class="card-block">
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Inscrição Imobiliária</p>
+            <h6 class="text-muted f-w-400">{{iptuDetalhesOut.inscricaoImobiliaria}}</h6>
+          </div>
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Inscrição Fiscal</p>
+            <h6 class="text-muted f-w-400">{{iptuDetalhesOut.inscricaoFiscal}}</h6>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Sublote</p>
+            <h6 class="text-muted f-w-400">{{iptuDetalhesOut.subLote}}</h6>
+          </div>
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Total Exercício</p>
+            <h6 class="text-muted f-w-400">{{iptuDetalhesOut.totalExercio}}</h6>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Exercício</p>
+            <h6 class="text-muted f-w-400">{{iptuDetalhesOut.exercicio}}</h6>
+          </div>
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Valor Venal</p>
+            <h6 class="text-muted f-w-400">{{iptuDetalhesOut.valorVenal}}</h6>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Valor Imposto</p>
+            <h6 class="text-muted f-w-400">{{iptuDetalhesOut.valorImposto}}</h6>
+          </div>
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Taxa Coleta de Lixo</p>
+            <h6 class="text-muted f-w-400">{{iptuDetalhesOut.taxaColetaLixo}}</h6>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Logradouro</p>
+            <h6 class="text-muted f-w-400">{{iptuDetalhesOut.logradouro}}</h6>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Proprietário</p>
+            <h6 class="text-muted f-w-400">{{iptuDetalhesOut.prorietario}}</h6>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">CPF/CNPJ Proprietário</p>
+            <h6 class="text-muted f-w-400">{{iptuDetalhesOut.cpfCnpjProprietario}}</h6>
+          </div>
+        </div>
+        <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Matrícula</h6>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Situação</p>
+            <h3
+              [ngClass]="iptuDetalhesOut.situacao"
+              class="f-w-400">{{iptuDetalhesOut.situacao}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

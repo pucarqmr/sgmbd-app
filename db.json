@@ -1,0 +1,148 @@
+{
+  "alunos": [
+    {
+      "id": 1,
+      "nome": "Harry Potter",
+      "cpf": "435.804.840-44",
+      "nomePai": "James Potter",
+      "nomeMae": "Lilian Potter",
+      "escola": {
+        "id": 1,
+        "nome": "Escola Municipal Bom Destino"
+      },
+      "endereco": {
+        "id": 1,
+        "logradouro": "Rua dos Alfeneiros",
+        "numero": 1,
+        "bairro": "Little Whinging",
+        "complemento": ""
+      },
+      "situacao": "Irregular"
+    },
+    {
+      "id": 2,
+      "nome": "Clark Joseph Kent",
+      "cpf": "432.194.910-65",
+      "nomePai": "Jonathan Kent",
+      "nomeMae": "Martha Kent",
+      "escola": {
+        "id": 1,
+        "nome": "Escola Municipal Bom Destino"
+      },
+      "endereco": {
+        "id": 2,
+        "logradouro": "Rua da paz",
+        "numero": 256,
+        "bairro": "Novo Mundo",
+        "complemento": ""
+      },
+      "situacao": "Regular"
+    },
+    {
+      "nome": "João de Oliveira",
+      "cpf": "000.000.000-00",
+      "nomePai": "Antônio de Oliveira",
+      "nomeMae": "Maria de Oliveira",
+      "escola": {
+        "id": 1,
+        "nome": "Escola Municipal Bom Destino",
+        "tipo": "MUNICIPAL",
+        "endereco": {
+          "id": 1,
+          "logradouro": "Rua da esperança",
+          "numero": 1,
+          "bairro": "Água Verde",
+          "complemento": ""
+        }
+      },
+      "endereco": {
+        "logradouro": "Rua Sete de Setembro",
+        "numero": "100",
+        "bairro": "Bairro Girassóis",
+        "complemento": "Condomínio Plaza, Bloco 01, Apt 101"
+      },
+      "id": 3,
+      "situacao": "Regular"
+    }
+  ],
+  "escolas": [
+    {
+      "id": 1,
+      "nome": "Escola Municipal Bom Destino",
+      "tipo": "MUNICIPAL",
+      "endereco": {
+        "id": 1,
+        "logradouro": "Rua da esperança",
+        "numero": 1,
+        "bairro": "Água Verde",
+        "complemento": ""
+      }
+    },
+    {
+      "id": 2,
+      "nome": "Escola Estadual Raio de Luz",
+      "tipo": "ESTADUAL",
+      "endereco": {
+        "id": 2,
+        "logradouro": "Avenida Afonso Pena",
+        "numero": 12,
+        "bairro": "Centro",
+        "complemento": ""
+      }
+    },
+    {
+      "id": 3,
+      "nome": "Escola Municipal Maria José de Freitas",
+      "tipo": "MUNICIPAL",
+      "endereco": {
+        "id": 3,
+        "logradouro": "Rua Sete de Setembro",
+        "numero": 3,
+        "bairro": "Sagrada Família",
+        "complemento": ""
+      }
+    }
+  ],
+  "escolas-municipais": [
+    {
+      "id": 1,
+      "nome": "Escola Municipal Bom Destino",
+      "tipo": "MUNICIPAL",
+      "endereco": {
+        "id": 1,
+        "logradouro": "Rua da esperança",
+        "numero": 1,
+        "bairro": "Água Verde",
+        "complemento": ""
+      }
+    },
+    {
+      "id": 3,
+      "nome": "Escola Municipal Maria José de Freitas",
+      "tipo": "MUNICIPAL",
+      "endereco": {
+        "id": 1,
+        "logradouro": "Rua Sete de Setembro",
+        "numero": 3,
+        "bairro": "Sagrada Família",
+        "complemento": ""
+      }
+    }
+  ],
+  "iptus": [
+    {
+      "inscricaoImobiliaria": "782654",
+      "inscricaoFiscal": "45118955",
+      "subLote": "075",
+      "totalExercio": 55.1,
+      "exercicio": 2021,
+      "valorVenal": 16400.0,
+      "valorImposto": 57.4,
+      "taxaColetaLixo": 0.0,
+      "logradouro": "Rua Santa Catarina, 150",
+      "prorietario": "Marcelo Souza",
+      "cpfCnpjProprietario": "760.250.470-49",
+      "situacao": "Regular"
+    }
+  ]
+}

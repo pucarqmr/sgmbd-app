@@ -1,0 +1,29 @@
+<div class="content" role="main">
+  <h2>Pesquisas
+  </h2>
+  <p>As pesquisas abrangem temas como Educação, Trabalho, Economia, População, Saúde e Território,
+    sobre o estado e o município, com auxílios de número forncecidos pelo IBGE.</p>
+  <div class="card-container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Censo escolar</h5>
+            <p class="card-text">Informações da educação básica e dados estatísticos sobre a educacional municipal.</p>
+            <a (click)="getResearchDetail(13)" class="btn btn-info">Exibir</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Extração vegetal e Silvicultura</h5>
+            <p class="card-text">Dados referentes ao desenvolvimento e da reprodução de florestas visando suas múltiplas aplicações.</p>
+            <a (click)="getResearchDetail(16)" class="btn btn-info">Exibir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-researche-detail [research]="research"></app-researche-detail>
+</div>

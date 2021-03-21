@@ -1,0 +1,67 @@
+<div class="container" role="main">
+  <br>
+  <h2>Rede de Ensino de Municipal</h2>
+  <p>Preencha o formulário abaixo para realizar a matrícula do aluno.</p>
+  <br>
+  <form [formGroup]=alunoForm (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="col-md-8 mb-3">
+        <label for="inputNome">Nome</label>
+        <input formControlName="nome" class="form-control" id="inputNome"
+               aria-describedby="nomeHelp" placeholder="Ex: João de Oliveira">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="inputCpf">Cpf</label>
+        <input formControlName="cpf" class="form-control" id="inputCpf"
+               aria-describedby="cpflHelp" placeholder="000.000.000-00">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="inputNomeDoPai">Nome do pai</label>
+        <input formControlName="nomePai" class="form-control" id="inputNomeDoPai"
+               aria-describedby="nomeDoPaiHelp" placeholder="Ex: Antônio de Oliveira">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="inputNomeDaMae">Nome da mãe</label>
+        <input formControlName="nomeMae" class="form-control" id="inputNomeDaMae"
+               aria-describedby="nomeDaMaeHelp" placeholder="Ex: Maria de Oliveira">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="inputEscola">Escola</label>
+        <select formControlName="escola" class="form-control" id="inputEscola">
+          <option *ngFor="let e of escolas" [ngValue]="e">{{e.nome}}</option>
+        </select>
+      </div>
+    </div>
+    <div formGroupName="endereco">
+      <div class="form-row">
+        <div class="col-md-10 mb-3">
+          <label for="inputLogradouro">Logradouro</label>
+          <input formControlName="logradouro" class="form-control" id="inputLogradouro"
+                 aria-describedby="logradouroHelp" placeholder="Ex: Rua Sete de Setembro">
+        </div>
+        <div class="col-md-2 mb-3">
+          <label for="inputNumero">Número</label>
+          <input formControlName="numero" class="form-control" id="inputNumero"
+                 aria-describedby="numeroHelp" placeholder="000">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6 mb-6">
+          <label for="inputBairro">Bairro</label>
+          <input formControlName="bairro" class="form-control" id="inputBairro"
+                 aria-describedby="bairrolHelp" placeholder="Ex: Bairro Girassóis">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="inputComplemento">Complemento</label>
+          <input formControlName="complemento" class="form-control" id="inputComplemento"
+                 aria-describedby="complementoHelp" placeholder="Ex: Condomínio Plaza, Bloco 01, Apt 101">
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-info">Enviar</button>
+  </form>
+</div>

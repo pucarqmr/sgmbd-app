@@ -1,0 +1,19 @@
+<div *ngIf="research" class="card" xmlns="http://www.w3.org/1999/html">
+    <div class="card-body">
+      <h2>{{research.nome}}</h2>
+      <p>{{research.descricao}}</p>
+      <p><b>Contexto: </b>{{research.contexto}}</p>
+      <p>{{research.observacao}}</p>
+      <h5>Períodos:</h5>
+      <ul *ngFor="let periodo of research.periodos" class="list-group">
+        <li class="list-group-item">
+          <p><b>Fonte: </b>{{periodo.fonte}}</p>
+          <p><b>Nota: </b>{{periodo.nota}}</p>
+          <p><b>Período: </b>{{periodo.periodo}}</p>
+          <p><b>Publicação: </b>{{periodo.publicacao}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
