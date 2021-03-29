@@ -23,6 +23,9 @@ import { ManutencaoComponent } from './manutencao/manutencao.component';
 import { IptuComponent } from './cidadao/iptu/iptu.component';
 import { IptuSegundaviaComponent } from './cidadao/iptu/iptu-segundavia/iptu-segundavia.component';
 import { IptuListarComponent } from './cidadao/iptu/iptu-listar/iptu-listar.component';
+import { LoginComponent } from './login/login.component';
+import { MainComponent } from './main/main.component';
+import {JwtHelperService} from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,9 @@ import { IptuListarComponent } from './cidadao/iptu/iptu-listar/iptu-listar.comp
     ManutencaoComponent,
     IptuComponent,
     IptuSegundaviaComponent,
-    IptuListarComponent
+    IptuListarComponent,
+    LoginComponent,
+    MainComponent
   ],
     imports: [
         BrowserModule,
@@ -53,7 +58,7 @@ import { IptuListarComponent } from './cidadao/iptu/iptu-listar/iptu-listar.comp
         FormsModule,
         ReactiveFormsModule
     ],
-  providers: [],
+  providers: [ JwtHelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

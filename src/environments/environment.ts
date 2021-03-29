@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8080',
-  jsonServerURL: 'http://localhost:3000'
+  geo: 'http://localhost:8303/api/geo',
+  cidadao: 'http://localhost:8303/api/servicos',
+  login: 'http://localhost:8303/api/login'
 };
 
 /*

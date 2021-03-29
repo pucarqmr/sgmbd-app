@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable, of} from "rxjs";
 import {Research} from "../model/research.model";
 import {catchError, tap} from "rxjs/operators";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from "../../environments/environment";
 import {MessageService} from "./message.service";
 
@@ -13,11 +13,15 @@ export class ResearchService {
 
   research: Observable<Research>;
 
+  headers = new HttpHeaders({
+    'Authorization': window.localStorage.getItem('token_name')
+  })
+
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
   getResearch(id: number): Observable<Research> {
-    const url = `${environment.apiUrl}/indicadores/pesquisas/${id}`;
-    return this.http.get<Research>(url).pipe(
+    const url = `${environment.geo}/indicadores/pesquisas/${id}`;
+    return this.http.get<Research>(url, { headers: this.headers }).pipe(
       tap(_ => this.log(`fetched research id=${id}`)),
       catchError(this.handleError<Research>(`getResearch id=${id}`))
     );
@@ -37,9 +41,8 @@ export class ResearchService {
     };
   }
 
-  /** Log a ResearchService message with the MessageService */
   private log(message: string) {
-    this.messageService.add(`HeroService: ${message}`);
+    this.messageService.add(`Service: ${message}`);
   }
 
 }

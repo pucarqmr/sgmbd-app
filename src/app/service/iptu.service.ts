@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from "rxjs";
-import {Escola} from "../model/escola.model";
 import {environment} from "../../environments/environment";
 import {catchError, tap} from "rxjs/operators";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {MessageService} from "./message.service";
 import {Iptu} from "../model/iptu.model";
-import {Aluno} from "../model/aluno.model";
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +16,10 @@ export class IptuService {
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
   getIptus(): Observable<Iptu[]> {
-    return this.http.get<Iptu[]>( `${environment.jsonServerURL}/iptus`)
+    const headers = new HttpHeaders({
+      'Authorization': window.localStorage.getItem('token_name')
+    })
+    return this.http.get<Iptu[]>( `${environment.cidadao}/iptus`, { headers: headers })
       .pipe(
         tap(_ => this.log('fetched Iptus')),
         catchError(this.handleError<Iptu[]>('getIptus', []))
@@ -26,8 +27,11 @@ export class IptuService {
   }
 
   getIptu(inscricaoImobiliaria: string): Observable<Iptu> {
-    const url = `${environment.jsonServerURL}/iptus/${inscricaoImobiliaria}`;
-    return this.http.get<Iptu>(url).pipe(
+    const headers = new HttpHeaders({
+      'Authorization': window.localStorage.getItem('token_name')
+    })
+    const url = `${environment.cidadao}/iptus/${inscricaoImobiliaria}`;
+    return this.http.get<Iptu>(url, { headers: headers }).pipe(
       tap(_ => this.log(`fetched Iptu id=${inscricaoImobiliaria}`)),
       catchError(this.handleError<Iptu>(`getIptu id=${inscricaoImobiliaria}`))
     );
@@ -47,9 +51,8 @@ export class IptuService {
     };
   }
 
-  /** Log a HeroService message with the MessageService */
   private log(message: string) {
-    this.messageService.add(`HeroService: ${message}`);
+    this.messageService.add(`Service: ${message}`);
   }
 
 }

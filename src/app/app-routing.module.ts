@@ -16,25 +16,32 @@ import {ManutencaoComponent} from "./manutencao/manutencao.component";
 import {IptuComponent} from "./cidadao/iptu/iptu.component";
 import {IptuListarComponent} from "./cidadao/iptu/iptu-listar/iptu-listar.component";
 import {IptuSegundaviaComponent} from "./cidadao/iptu/iptu-segundavia/iptu-segundavia.component";
+import {MainComponent} from './main/main.component';
+import {
+  AuthGuardService as AuthGuard
+} from './service/auth/auth-guard.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'geo', component: GeoComponent },
-  { path: 'map', component: MapComponent },
-  { path: 'researches', component: ResearchesComponent },
-  { path: 'detail/:id', component: ResearcheDetailComponent },
-  { path: 'cidadao', component: CidadaoComponent },
-  { path: 'ensino', component: EnsinoComponent },
-  { path: 'escolas', component: EscolasComponent },
-  { path: 'matriculas', component: MatriculasComponent },
-  { path: 'matricula', component: MatriculaComponent },
-  { path: 'matricula-listar', component: MatriculaListarComponent },
-  { path: 'matricula-detalhes', component: MatriculaDetalhesComponent },
-  { path: 'manutencao', component: ManutencaoComponent },
-  { path: 'iptu', component: IptuComponent },
-  { path: 'iptu-listar', component: IptuListarComponent },
-  { path: 'iptu-segundavia', component: IptuSegundaviaComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule)},
+  { path: '', component: MainComponent, children: [
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: 'geo', component: GeoComponent, canActivate: [AuthGuard] },
+    { path: 'map', component: MapComponent, canActivate: [AuthGuard] },
+    { path: 'researches', component: ResearchesComponent, canActivate: [AuthGuard] },
+    { path: 'detail/:id', component: ResearcheDetailComponent, canActivate: [AuthGuard] },
+    { path: 'cidadao', component: CidadaoComponent, canActivate: [AuthGuard] },
+    { path: 'ensino', component: EnsinoComponent, canActivate: [AuthGuard] },
+    { path: 'escolas', component: EscolasComponent, canActivate: [AuthGuard] },
+    { path: 'matriculas', component: MatriculasComponent, canActivate: [AuthGuard] },
+    { path: 'matricula', component: MatriculaComponent, canActivate: [AuthGuard] },
+    { path: 'matricula-listar', component: MatriculaListarComponent, canActivate: [AuthGuard] },
+    { path: 'matricula-detalhes', component: MatriculaDetalhesComponent, canActivate: [AuthGuard] },
+    { path: 'manutencao', component: ManutencaoComponent, canActivate: [AuthGuard] },
+    { path: 'iptu', component: IptuComponent, canActivate: [AuthGuard] },
+    { path: 'iptu-listar', component: IptuListarComponent, canActivate: [AuthGuard] },
+    { path: 'iptu-segundavia', component: IptuSegundaviaComponent, canActivate: [AuthGuard] }
+  ]}
 ];
 
 @NgModule({

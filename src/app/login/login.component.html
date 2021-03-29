@@ -1,0 +1,45 @@
+<style>
+  .image-login {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+  }
+  .text-login {
+    color: cadetblue;
+  }
+</style>
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+          <span class="image-login"> <img src="../../assets/images/city-hall-64.png" alt="Logo"> </span>
+          <h2 class="image-login text-login">SGIM</h2>
+        <div class="card-body">
+          <form [formGroup]=loginForm (ngSubmit)="onSubmit()" class="form-signin">
+            <div class="form-group">
+              <label for="inputUsuario">Usuário</label>
+              <input type="text" id="inputUsuario" class="form-control"
+                     formControlName="username" placeholder="Usuário" autofocus>
+            </div>
+
+            <div class="form-group">
+              <label for="inputPassword">Senha</label>
+              <input type="password" id="inputPassword" class="form-control"
+                     formControlName="password" placeholder="Senha">
+            </div>
+
+            <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck1">
+            </div>
+            <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit">Login</button>
+            <hr class="my-4">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
