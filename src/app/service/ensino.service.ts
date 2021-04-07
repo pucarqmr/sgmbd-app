@@ -77,7 +77,7 @@ export class EnsinoService {
     const headers = new HttpHeaders({
       'Authorization': window.localStorage.getItem('token_name')
     })
-    const url = `${environment.cidadao}/alunos/${cpf}`;
+    const url = `${environment.cidadao}/alunos/cpf/${cpf}`;
     return this.http.get<Aluno>(url, { headers: headers }).pipe(
       tap(_ => this.log(`fetched Aluno id=${cpf}`)),
       catchError(this.handleError<Aluno>(`getAluno id=${cpf}`))

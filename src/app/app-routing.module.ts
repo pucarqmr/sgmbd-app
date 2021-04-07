@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: '', component: MainComponent, children: [
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'geo', component: GeoComponent, canActivate: [AuthGuard] },
-    { path: 'map', component: MapComponent, canActivate: [AuthGuard] },
+    { path: 'map', component: ManutencaoComponent, canActivate: [AuthGuard] },
     { path: 'researches', component: ResearchesComponent, canActivate: [AuthGuard] },
     { path: 'detail/:id', component: ResearcheDetailComponent, canActivate: [AuthGuard] },
     { path: 'cidadao', component: CidadaoComponent, canActivate: [AuthGuard] },
